@@ -18,9 +18,10 @@ function displayDiv(){
   $('#boxes').empty();
   for (var i=0; i<boxesArray.length; i++){
     $('#boxes').append(boxesArray[i]);
-    $('.redDiv').empty();
+    if (i==boxesArray.length-1){
     $('.redDiv').append('<button id="swapButton">Swap</button>');
     $('.redDiv').append('<button id="deleteButton" data-id="'+i+'">Delete</button>');
+    }
   }
 }
 
