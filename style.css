@@ -1,0 +1,12 @@
+div{
+  height: 48px;
+  margin-top: 10px;
+}
+
+.yellowDiv{
+  background-color: yellow;
+}
+
+.redDiv{
+  background-color: red;
+}
