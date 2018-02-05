@@ -1,7 +1,7 @@
 $(document).ready(function(){
   $('#generateButton').on('click', createDiv);
-  $('#boxes').on('click', '#swapButton', swapColors);
-  $('#boxes').on('click', '#deleteButton', deleteDiv);
+  $('#boxes').on('click', '.swapButton', swapColors);
+  $('#boxes').on('click', '.deleteButton', deleteDiv);
 })
 
 var clickedCount = 0;
@@ -16,12 +16,10 @@ function createDiv(){
 function displayDiv(){
   console.log('in displayDiv');
   $('#boxes').empty();
-  for (var i=0; i<boxesArray.length; i++){
-    $('#boxes').append(boxesArray[i]);
-    if (i==boxesArray.length-1){
-    $('.redDiv').append('<button id="swapButton">Swap</button>');
-    $('.redDiv').append('<button id="deleteButton" data-id="'+i+'">Delete</button>');
-    }
+  for (var i=0; i<boxesArray.length; i++){ //0, 1, 2
+    $('#boxes').append(boxesArray[i]); //boxesArray[0], boxesArray[1], boxesArray[2]
+    $('.redDiv:last').append('<button class="swapButton">Swap</button>');
+    $('.redDiv:last').append('<button class="deleteButton" data-id="'+i+'">Delete</button>'); //0 , 1, 2
   }
 }
 
